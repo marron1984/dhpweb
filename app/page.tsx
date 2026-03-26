@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getFeaturedProjects, getAllProjects, getAllCategories } from "@/lib/projects";
 import ProjectStoryCard from "@/components/ProjectStoryCard";
 import ContactCTA from "@/components/ContactCTA";
@@ -47,12 +48,15 @@ export default function HomePage() {
             {/* Visual */}
             <div className="order-1 lg:order-2 animate-fade-in">
               <div className="relative">
-                <div className="aspect-[3/4] lg:aspect-[4/5] bg-cream overflow-hidden">
-                  <div className="absolute inset-0 flex items-end p-8">
-                    <p className="font-serif text-[11px] text-muted/30 tracking-[0.3em] uppercase">
-                      Project Stories
-                    </p>
-                  </div>
+                <div className="aspect-[3/4] lg:aspect-[4/5] bg-cream overflow-hidden relative">
+                  <Image
+                    src="/images/project-1.png"
+                    alt="都市開発"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
                 </div>
                 {/* Decorative frame */}
                 <div className="absolute -bottom-3 -right-3 lg:-bottom-6 lg:-right-6 w-full h-full border border-brand-red/15 -z-10" />

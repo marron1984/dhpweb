@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ProjectStory } from "@/lib/types";
 
 interface ProjectStoryCardProps {
@@ -26,18 +27,24 @@ export default function ProjectStoryCard({
             isFeatured ? "aspect-[4/5]" : "aspect-[3/4]"
           }`}
         >
-          <div className="img-zoom absolute inset-0 bg-gradient-to-b from-cream to-[#ece9e5]" />
+          <Image
+            src={project.thumbnail}
+            alt={project.title}
+            fill
+            className="object-cover img-zoom"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
           {/* Overlay on hover */}
           <div className="absolute inset-0 bg-brand-red/0 group-hover:bg-brand-red/5 transition-colors duration-700" />
           {/* Index number */}
           <div className="absolute top-5 left-5">
-            <span className="text-[11px] text-muted/30 tabular-nums">
+            <span className="text-[11px] text-white/70 tabular-nums drop-shadow-sm">
               {String(index + 1).padStart(2, "0")}
             </span>
           </div>
           {/* Category badge */}
           <div className="absolute bottom-5 left-5">
-            <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/60 bg-white/80 backdrop-blur-sm px-3 py-1.5">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/80 bg-white/85 backdrop-blur-sm px-3 py-1.5">
               {project.category}
             </span>
           </div>

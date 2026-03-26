@@ -8,8 +8,8 @@ export const projects: ProjectStory[] = [
     category: "ホテル・リゾート",
     location: "東京都渋谷区",
     year: 2023,
-    thumbnail: "/images/placeholder-1.jpg",
-    heroImage: "/images/placeholder-1.jpg",
+    thumbnail: "/images/project-3.png",
+    heroImage: "/images/project-1.png",
     summary:
       "渋谷エリアに立地する築30年の商業ビルを、ライフスタイルホテルとして再生。周辺の文化的コンテクストを読み解き、地域と共鳴する宿泊体験を設計しました。稼働率は開業半年で85%を超え、エリアの回遊性向上にも寄与しています。",
     challenge:
@@ -38,8 +38,8 @@ export const projects: ProjectStory[] = [
     category: "ホテル・リゾート",
     location: "沖縄県恩納村",
     year: 2022,
-    thumbnail: "/images/placeholder-2.jpg",
-    heroImage: "/images/placeholder-2.jpg",
+    thumbnail: "/images/project-2.png",
+    heroImage: "/images/project-4.png",
     summary:
       "沖縄本島西海岸の未活用地に、全8棟のプライベートヴィラリゾートを開発。自然環境との共生を設計思想の核に据え、建築・ランドスケープ・運営を一体で企画しました。開業初年度から高稼働を実現し、不動産としての資産価値も高い評価を受けています。",
     challenge:
@@ -68,8 +68,8 @@ export const projects: ProjectStory[] = [
     category: "再生・リノベーション",
     location: "大阪市中央区",
     year: 2023,
-    thumbnail: "/images/placeholder-3.jpg",
-    heroImage: "/images/placeholder-3.jpg",
+    thumbnail: "/images/project-5.png",
+    heroImage: "/images/project-5.png",
     summary:
       "大阪・心斎橋エリアの築20年商業ビルを対象に、テナント構成とビルコンセプトの全面再編集を実施。単なるリーシングではなく、ビル全体を一つのメディアとして捉え直し、ストーリー性のあるテナントミックスを実現しました。",
     challenge:
@@ -98,8 +98,8 @@ export const projects: ProjectStory[] = [
     category: "商業・飲食",
     location: "東京都目黒区",
     year: 2024,
-    thumbnail: "/images/placeholder-4.jpg",
-    heroImage: "/images/placeholder-4.jpg",
+    thumbnail: "/images/project-6.png",
+    heroImage: "/images/project-6.png",
     summary:
       "中目黒エリアに、人気飲食ブランドとのコラボレーションによる複合型飲食ビルを開発。「食」を軸にした体験価値の創出により、通常の飲食ビルでは実現し得ない収益性とブランド価値の両立を達成しました。",
     challenge:
@@ -128,8 +128,8 @@ export const projects: ProjectStory[] = [
     category: "投資・流動化",
     location: "福岡市博多区",
     year: 2022,
-    thumbnail: "/images/placeholder-5.jpg",
-    heroImage: "/images/placeholder-5.jpg",
+    thumbnail: "/images/project-1.png",
+    heroImage: "/images/project-1.png",
     summary:
       "福岡・博多エリアの収益マンション（全48戸）を取得し、バリューアッド戦略により不動産価値を再構築。物理的な改修にとどまらず、運営体制・テナントリレーション・ブランディングを総合的に再設計し、NOI（営業純利益）を大幅に改善しました。",
     challenge:
@@ -158,8 +158,8 @@ export const projects: ProjectStory[] = [
     category: "コンサルティング",
     location: "東京都港区・他複数拠点",
     year: 2024,
-    thumbnail: "/images/placeholder-6.jpg",
-    heroImage: "/images/placeholder-6.jpg",
+    thumbnail: "/images/project-5.png",
+    heroImage: "/images/project-3.png",
     summary:
       "国内外の投資家から委託を受け、複数の不動産プロジェクトにおけるプロジェクトマネジメント・アセットマネジメント・コンサルティングを包括的に提供。投資判断から運営最適化まで、プロジェクトのライフサイクル全体をサポートしています。",
     challenge:

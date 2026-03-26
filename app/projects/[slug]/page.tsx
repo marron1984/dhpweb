@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { getAllProjects, getProjectBySlug, getRelatedProjects } from "@/lib/projects";
 import StorySection from "@/components/StorySection";
@@ -73,7 +74,14 @@ export default async function ProjectDetailPage({ params }: Props) {
 
           {/* Hero Image */}
           <div className="mt-16 aspect-[21/9] bg-cream relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-cream to-[#ece9e5]" />
+            <Image
+              src={project.heroImage}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
           </div>
         </div>
       </section>
