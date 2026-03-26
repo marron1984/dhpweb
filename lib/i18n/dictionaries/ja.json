@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "title": "Project Stories | dhp都市開発",
+    "description": "株式会社dhp都市開発のProject Stories。不動産の企画・開発・再生における価値創造のプロセスを、一つひとつのストーリーとしてお届けします。"
+  },
+  "nav": {
+    "stories": "Stories",
+    "contact": "Contact",
+    "corporate": "Corporate"
+  },
+  "hero": {
+    "label": "dhp Urban Development",
+    "title": "価値創造の\nプロセスを、\n物語として。",
+    "body": "ホテル開発、都市再生、収益不動産の再構築——一つひとつのプロジェクトには、課題があり、戦略があり、実行と成果の物語がある。",
+    "cta": "ストーリーを読む"
+  },
+  "concept": {
+    "label": "Philosophy",
+    "title": "実績を並べるのではなく、\n物語を伝える。\nそれが、私たちの選んだ方法です。",
+    "body1": "dhp都市開発が手がけるプロジェクトは、一つとして同じものがありません。土地の文脈、エリアの課題、関わる人々の想い——それらを読み解き、企画し、実行してきたプロセスそのものに、私たちの価値があると考えています。",
+    "body2": "数字だけでは伝わらない、価値創造のリアルを。背景・課題・戦略・実行・成果——このサイトで、すべてをお伝えします。"
+  },
+  "featured": {
+    "label": "Featured",
+    "title": "注目のストーリー",
+    "viewAll": "View All"
+  },
+  "more": {
+    "label": "More",
+    "title": "その他のストーリー"
+  },
+  "categories": {
+    "label": "Categories",
+    "title": "カテゴリから探す"
+  },
+  "about": {
+    "label": "About",
+    "title": "dhp都市開発について",
+    "body": "「ホテル＆リゾートプロデュース開発事業」「不動産開発・流動化事業」「アセットマネジメント／プロジェクトマネジメント業務」「不動産コンサルティング／プロジェクトアレンジング業務」——4つの事業領域を通じて、不動産の価値創造に取り組んでいます。",
+    "corporateLink": "コーポレートサイトを見る"
+  },
+  "cta": {
+    "label": "Contact",
+    "title": "あなたのプロジェクトも、\nストーリーに。",
+    "body": "不動産開発、投資、再生、コンサルティング。次のプロジェクトのご相談を承っています。",
+    "button": "お問い合わせ"
+  },
+  "projects": {
+    "label": "Project Stories",
+    "title": "プロジェクトストーリー",
+    "subtitle": "企画背景・課題・戦略・実行・成果。一つひとつのプロジェクトが持つ価値創造のプロセスを、物語としてお伝えします。",
+    "filterAll": "All",
+    "empty": "該当するプロジェクトがありません。",
+    "backToStories": "Stories"
+  },
+  "detail": {
+    "overview": "Overview",
+    "overviewTitle": "プロジェクト概要",
+    "background": "Background",
+    "backgroundTitle": "課題",
+    "strategy": "Strategy",
+    "strategyTitle": "戦略",
+    "execution": "Execution",
+    "executionTitle": "実行",
+    "result": "Result",
+    "resultTitle": "成果",
+    "future": "Future",
+    "futureTitle": "今後の展開",
+    "related": "Related",
+    "relatedTitle": "関連するストーリー"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "お問い合わせ",
+    "subtitle": "プロジェクトに関するご相談、投資・提携のご提案など、お気軽にお問い合わせください。",
+    "categoryLabel": "ご相談カテゴリ",
+    "categories": [
+      "プロジェクトに関するご相談",
+      "投資・出資に関するご相談",
+      "事業提携のご提案",
+      "コンサルティング依頼",
+      "その他のお問い合わせ"
+    ],
+    "form": {
+      "category": "ご相談カテゴリ",
+      "categoryPlaceholder": "選択してください",
+      "company": "会社名",
+      "companyPlaceholder": "株式会社〇〇",
+      "name": "お名前",
+      "namePlaceholder": "山田 太郎",
+      "email": "メールアドレス",
+      "emailPlaceholder": "mail@example.com",
+      "phone": "電話番号",
+      "phonePlaceholder": "03-0000-0000",
+      "message": "お問い合わせ内容",
+      "messagePlaceholder": "お問い合わせ内容をご記入ください",
+      "submit": "送信する",
+      "privacy": "お送りいただいた情報は、お問い合わせへの回答にのみ使用いたします。"
+    },
+    "thanks": {
+      "label": "Thank You",
+      "title": "お問い合わせを受け付けました",
+      "body": "内容を確認の上、担当者よりご連絡いたします。"
+    }
+  },
+  "footer": {
+    "description": "不動産の企画・開発・再生における価値創造のプロセスを、ストーリーとしてお届けするブランドメディア。",
+    "site": "Site",
+    "corporate": "Corporate",
+    "corporateLinks": ["会社概要", "事業内容", "業務実績", "グループ企業"]
+  },
+  "common": {
+    "read": "Read",
+    "corporateSite": "Corporate Site"
+  }
+}

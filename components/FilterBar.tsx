@@ -6,13 +6,10 @@ interface FilterBarProps {
   categories: ProjectCategory[];
   activeCategory: ProjectCategory | null;
   onSelect: (category: ProjectCategory | null) => void;
+  allLabel?: string;
 }
 
-export default function FilterBar({
-  categories,
-  activeCategory,
-  onSelect,
-}: FilterBarProps) {
+export default function FilterBar({ categories, activeCategory, onSelect, allLabel = "All" }: FilterBarProps) {
   return (
     <div className="flex flex-wrap gap-3 mb-16 lg:mb-24">
       <button
@@ -23,7 +20,7 @@ export default function FilterBar({
             : "bg-transparent text-muted/60 hover:text-foreground border border-border hover:border-foreground/20"
         }`}
       >
-        All
+        {allLabel}
       </button>
       {categories.map((cat) => (
         <button

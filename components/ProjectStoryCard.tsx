@@ -4,22 +4,26 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ProjectStory } from "@/lib/types";
+import type { Locale } from "@/lib/i18n";
 
 interface ProjectStoryCardProps {
   project: ProjectStory;
   variant?: "default" | "featured";
   index?: number;
+  locale?: Locale;
 }
 
 export default function ProjectStoryCard({
   project,
   variant = "default",
   index = 0,
+  locale = "ja",
 }: ProjectStoryCardProps) {
   const isFeatured = variant === "featured";
+  const prefix = `/${locale}`;
 
   return (
-    <Link href={`/projects/${project.slug}`} className="group block">
+    <Link href={`${prefix}/projects/${project.slug}`} className="group block">
       <article>
         {/* Image */}
         <motion.div

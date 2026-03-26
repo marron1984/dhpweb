@@ -2,17 +2,27 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import type { Locale, Dictionary } from "@/lib/i18n";
 
 const CORPORATE_URL = "https://www.dhp-dev.jp";
 
-const navigation = [
-  { name: "Stories", href: "/projects" },
-  { name: "Contact", href: "/contact" },
-];
+interface HeaderProps {
+  locale: Locale;
+  dict: Dictionary;
+}
 
-export default function Header() {
+export default function Header({ locale, dict }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const altLocale = locale === "ja" ? "en" : "ja";
+  const altLabel = locale === "ja" ? "EN" : "JA";
+  const prefix = `/${locale}`;
+
+  const navigation = [
+    { name: dict.nav.stories, href: `${prefix}/projects` },
+    { name: dict.nav.contact, href: `${prefix}/contact` },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -30,19 +40,15 @@ export default function Header() {
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-16">
         <div className="flex items-center justify-between h-16 lg:h-[72px]">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href={`${prefix}`} className="flex items-center gap-3 group">
             <span className="inline-flex items-center justify-center w-[30px] h-[30px] bg-brand-red text-white text-[9px] font-bold tracking-tight leading-none transition-transform duration-300 group-hover:scale-95">
               dhp
             </span>
-            <div className="flex flex-col">
-              <span className="text-[13px] font-medium tracking-[0.02em] leading-tight text-foreground">
-                Project Stories
-              </span>
-            </div>
+            <span className="text-[13px] font-medium tracking-[0.02em] leading-tight text-foreground">
+              Project Stories
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-10">
             {navigation.map((item) => (
               <Link
@@ -60,63 +66,48 @@ export default function Header() {
               rel="noopener noreferrer"
               className="text-[12px] tracking-[0.15em] uppercase text-muted/60 hover:text-muted transition-colors duration-300 flex items-center gap-1.5"
             >
-              Corporate
+              {dict.nav.corporate}
               <svg className="w-2.5 h-2.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>
             </a>
+            <span className="w-px h-3 bg-border" />
+            <Link
+              href={`/${altLocale}`}
+              className="text-[12px] tracking-[0.15em] uppercase text-muted/60 hover:text-foreground transition-colors duration-300"
+            >
+              {altLabel}
+            </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             type="button"
             className="lg:hidden p-2 -mr-2"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="メニューを開く"
+            aria-label="Menu"
             aria-expanded={isOpen}
           >
             <div className="w-5 flex flex-col gap-[5px]">
-              <span
-                className={`block h-[1px] bg-foreground transition-all duration-300 origin-center ${
-                  isOpen ? "rotate-45 translate-y-[3px]" : ""
-                }`}
-              />
-              <span
-                className={`block h-[1px] bg-foreground transition-all duration-300 origin-center ${
-                  isOpen ? "-rotate-45 -translate-y-[3px]" : ""
-                }`}
-              />
+              <span className={`block h-[1px] bg-foreground transition-all duration-300 origin-center ${isOpen ? "rotate-45 translate-y-[3px]" : ""}`} />
+              <span className={`block h-[1px] bg-foreground transition-all duration-300 origin-center ${isOpen ? "-rotate-45 -translate-y-[3px]" : ""}`} />
             </div>
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      <div
-        className={`lg:hidden overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
+      <div className={`lg:hidden overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"}`}>
         <nav className="px-6 pb-8 pt-4 bg-warm-white">
           {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="block py-3 text-[13px] tracking-[0.1em] uppercase text-muted hover:text-foreground transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
+            <Link key={item.name} href={item.href} className="block py-3 text-[13px] tracking-[0.1em] uppercase text-muted hover:text-foreground transition-colors" onClick={() => setIsOpen(false)}>
               {item.name}
             </Link>
           ))}
-          <a
-            href={CORPORATE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block py-3 text-[13px] tracking-[0.1em] uppercase text-muted/60"
-            onClick={() => setIsOpen(false)}
-          >
-            Corporate Site ↗
+          <a href={CORPORATE_URL} target="_blank" rel="noopener noreferrer" className="block py-3 text-[13px] tracking-[0.1em] uppercase text-muted/60" onClick={() => setIsOpen(false)}>
+            {dict.nav.corporate} ↗
           </a>
+          <Link href={`/${altLocale}`} className="block py-3 text-[13px] tracking-[0.1em] uppercase text-muted/60" onClick={() => setIsOpen(false)}>
+            {altLabel}
+          </Link>
         </nav>
       </div>
     </header>

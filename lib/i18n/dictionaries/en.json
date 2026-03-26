@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "title": "Project Stories | dhp Urban Development",
+    "description": "Project Stories by dhp Urban Development. Discover the value creation process behind our real estate planning, development, and revitalization projects."
+  },
+  "nav": {
+    "stories": "Stories",
+    "contact": "Contact",
+    "corporate": "Corporate"
+  },
+  "hero": {
+    "label": "dhp Urban Development",
+    "title": "Value Creation\nThrough\nStorytelling.",
+    "body": "Hotel development, urban revitalization, revenue property restructuring — each project carries its own challenges, strategies, execution, and outcomes.",
+    "cta": "Read Stories"
+  },
+  "concept": {
+    "label": "Philosophy",
+    "title": "Not just listing results,\nbut telling stories.\nThat is our chosen approach.",
+    "body1": "No two projects by dhp Urban Development are alike. The context of the land, the challenges of the area, the aspirations of the people involved — we read, plan, and execute these into a process that defines our value.",
+    "body2": "The reality of value creation, beyond numbers. Background, challenges, strategy, execution, outcomes — we share everything on this site."
+  },
+  "featured": {
+    "label": "Featured",
+    "title": "Featured Stories",
+    "viewAll": "View All"
+  },
+  "more": {
+    "label": "More",
+    "title": "More Stories"
+  },
+  "categories": {
+    "label": "Categories",
+    "title": "Browse by Category"
+  },
+  "about": {
+    "label": "About",
+    "title": "About dhp Urban Development",
+    "body": "Through four business areas — Hotel & Resort Produce Development, Real Estate Development & Securitization, Asset Management / Project Management, and Real Estate Consulting / Project Arranging — we pursue value creation in real estate.",
+    "corporateLink": "Visit Corporate Site"
+  },
+  "cta": {
+    "label": "Contact",
+    "title": "Your project could be\nthe next story.",
+    "body": "Real estate development, investment, revitalization, consulting. We welcome inquiries about your next project.",
+    "button": "Get in Touch"
+  },
+  "projects": {
+    "label": "Project Stories",
+    "title": "Project Stories",
+    "subtitle": "Background, challenges, strategy, execution, outcomes. We present the value creation process of each project as a compelling story.",
+    "filterAll": "All",
+    "empty": "No projects found.",
+    "backToStories": "Stories"
+  },
+  "detail": {
+    "overview": "Overview",
+    "overviewTitle": "Project Overview",
+    "background": "Background",
+    "backgroundTitle": "Challenge",
+    "strategy": "Strategy",
+    "strategyTitle": "Strategy",
+    "execution": "Execution",
+    "executionTitle": "Execution",
+    "result": "Result",
+    "resultTitle": "Outcome",
+    "future": "Future",
+    "futureTitle": "Future Outlook",
+    "related": "Related",
+    "relatedTitle": "Related Stories"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Contact Us",
+    "subtitle": "We welcome inquiries about projects, investments, partnerships, and consulting.",
+    "categoryLabel": "Inquiry Category",
+    "categories": [
+      "Project inquiry",
+      "Investment / Funding",
+      "Business partnership",
+      "Consulting request",
+      "Other inquiries"
+    ],
+    "form": {
+      "category": "Inquiry Category",
+      "categoryPlaceholder": "Please select",
+      "company": "Company",
+      "companyPlaceholder": "Company name",
+      "name": "Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "mail@example.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+81-3-0000-0000",
+      "message": "Message",
+      "messagePlaceholder": "Please describe your inquiry",
+      "submit": "Submit",
+      "privacy": "The information you provide will only be used to respond to your inquiry."
+    },
+    "thanks": {
+      "label": "Thank You",
+      "title": "Your inquiry has been received",
+      "body": "A representative will contact you shortly."
+    }
+  },
+  "footer": {
+    "description": "A brand media platform sharing the value creation process behind real estate planning, development, and revitalization.",
+    "site": "Site",
+    "corporate": "Corporate",
+    "corporateLinks": ["Company", "Business", "Works", "Group"]
+  },
+  "common": {
+    "read": "Read",
+    "corporateSite": "Corporate Site"
+  }
+}
