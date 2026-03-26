@@ -40,14 +40,12 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-end bg-dark text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark via-[#333] to-[#1a1a1a]" />
-        <div className="absolute inset-0 bg-dark/60" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24 w-full">
+      {/* Hero — Light, airy */}
+      <section className="relative pt-28 lg:pt-36 pb-16 lg:pb-24 bg-gradient-to-b from-light-gray/80 to-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <Link
             href="/projects"
-            className="inline-block text-xs tracking-wide text-gray-400 hover:text-white transition-colors duration-300 mb-8"
+            className="inline-block text-xs tracking-wide text-gray-400 hover:text-brand-red transition-colors duration-300 mb-8"
           >
             &larr; Project Stories
           </Link>
@@ -55,19 +53,29 @@ export default async function ProjectDetailPage({ params }: Props) {
             <span className="text-[11px] tracking-wider text-brand-red font-medium">
               {project.category}
             </span>
-            <span className="text-[11px] text-gray-500">|</span>
-            <span className="text-[11px] text-gray-400">
+            <span className="text-[11px] text-gray-300">|</span>
+            <span className="text-[11px] text-gray-500">
               {project.location}
             </span>
-            <span className="text-[11px] text-gray-500">|</span>
-            <span className="text-[11px] text-gray-400">{project.year}</span>
+            <span className="text-[11px] text-gray-300">|</span>
+            <span className="text-[11px] text-gray-500">{project.year}</span>
           </div>
-          <h1 className="text-3xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-tight">
+          <h1 className="text-3xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-tight text-foreground">
             {project.title}
           </h1>
-          <p className="mt-4 text-base lg:text-lg text-gray-400 font-light max-w-2xl">
+          <p className="mt-4 text-base lg:text-lg text-gray-500 font-light max-w-2xl">
             {project.subtitle}
           </p>
+          <div className="mt-8 h-px w-20 bg-brand-red" />
+
+          {/* Hero Image Placeholder */}
+          <div className="mt-12 aspect-[21/9] bg-light-gray relative overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center text-gray-200">
+              <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={0.3} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+              </svg>
+            </div>
+          </div>
         </div>
       </section>
 

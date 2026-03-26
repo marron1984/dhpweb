@@ -13,47 +13,69 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-dark text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-dark to-[#333]" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32">
-          <div className="max-w-3xl">
-            <p className="text-[11px] tracking-[0.3em] uppercase text-brand-red mb-8 animate-fade-in-up">
-              dhp Urban Development — Project Stories
-            </p>
-            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-light leading-[1.15] tracking-tight animate-fade-in-up">
-              価値創造の
-              <br />
-              プロセスを、
-              <br />
-              物語として。
-            </h1>
-            <p className="mt-8 text-base lg:text-lg text-gray-400 font-light leading-relaxed max-w-xl animate-fade-in-up-delay">
-              ホテル開発、都市再生、収益不動産の再構築——
-              <br className="hidden lg:block" />
-              一つひとつのプロジェクトには、課題があり、戦略があり、
-              <br className="hidden lg:block" />
-              実行と成果の物語がある。
-            </p>
-            <div className="mt-12 flex items-center gap-8 animate-fade-in-up-delay-2">
-              <Link
-                href="/projects"
-                className="inline-block text-sm tracking-wide bg-brand-red border border-brand-red px-8 py-3.5 text-white hover:bg-transparent transition-all duration-300"
-              >
-                ストーリーを読む
-              </Link>
+      {/* Hero Section — White base, light and open */}
+      <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
+        {/* Subtle background texture */}
+        <div className="absolute inset-0 bg-gradient-to-b from-light-gray/60 via-white to-white" />
+        {/* Decorative accent line */}
+        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-brand-red/0 via-brand-red/20 to-brand-red/0 hidden lg:block" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32 lg:py-40 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            {/* Left: Copy */}
+            <div className="lg:col-span-7">
+              <p className="text-[11px] tracking-[0.3em] uppercase text-brand-red mb-8 animate-fade-in-up">
+                dhp Urban Development — Project Stories
+              </p>
+              <h1 className="text-4xl lg:text-6xl xl:text-7xl font-light leading-[1.15] tracking-tight text-foreground animate-fade-in-up">
+                価値創造の
+                <br />
+                プロセスを、
+                <br />
+                物語として。
+              </h1>
+              <p className="mt-8 text-sm lg:text-base text-gray-500 font-light leading-[2] max-w-lg animate-fade-in-up-delay">
+                ホテル開発、都市再生、収益不動産の再構築——
+                一つひとつのプロジェクトには、課題があり、戦略があり、
+                実行と成果の物語がある。
+              </p>
+              <div className="mt-12 flex items-center gap-8 animate-fade-in-up-delay-2">
+                <Link
+                  href="/projects"
+                  className="inline-block text-sm tracking-wide bg-brand-red border border-brand-red px-8 py-3.5 text-white hover:bg-[#6b1a26] hover:border-[#6b1a26] transition-all duration-300"
+                >
+                  ストーリーを読む
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: Visual accent */}
+            <div className="lg:col-span-5 hidden lg:block">
+              <div className="relative">
+                {/* Abstract placeholder for hero visual */}
+                <div className="aspect-[4/5] bg-light-gray relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <svg className="w-20 h-20 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={0.3} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+                    </svg>
+                  </div>
+                </div>
+                {/* Decorative elements */}
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 border border-brand-red/20" />
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-brand-red/5" />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <div className="w-px h-16 bg-gradient-to-b from-transparent to-gray-500" />
+          <div className="w-px h-12 bg-gradient-to-b from-transparent to-gray-300" />
         </div>
       </section>
 
       {/* Concept */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 border-t border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
@@ -168,7 +190,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About dhp — light section */}
+      {/* About dhp */}
       <section className="py-24 lg:py-32 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-[11px] tracking-[0.2em] uppercase text-brand-red mb-4">
