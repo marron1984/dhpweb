@@ -1,22 +1,25 @@
 import Link from "next/link";
-import { getFeaturedProjects, getAllProjects } from "@/lib/projects";
+import { getFeaturedProjects, getAllProjects, getAllCategories } from "@/lib/projects";
 import ProjectStoryCard from "@/components/ProjectStoryCard";
-import SectionHeader from "@/components/SectionHeader";
 import ContactCTA from "@/components/ContactCTA";
+
+const CORPORATE_URL = "https://www.dhp-dev.jp";
 
 export default function HomePage() {
   const featuredProjects = getFeaturedProjects();
-  const totalProjects = getAllProjects().length;
+  const allProjects = getAllProjects();
+  const otherProjects = allProjects.filter((p) => !p.featured);
+  const categories = getAllCategories();
 
   return (
     <>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-dark text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-dark via-[#333] to-[#1a1a1a]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a1a] via-dark to-[#333]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32">
           <div className="max-w-3xl">
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-8 animate-fade-in-up">
-              DHP Urban Development
+            <p className="text-[11px] tracking-[0.3em] uppercase text-brand-red mb-8 animate-fade-in-up">
+              dhp Urban Development — Project Stories
             </p>
             <h1 className="text-4xl lg:text-6xl xl:text-7xl font-light leading-[1.15] tracking-tight animate-fade-in-up">
               価値創造の
@@ -26,44 +29,19 @@ export default function HomePage() {
               物語として。
             </h1>
             <p className="mt-8 text-base lg:text-lg text-gray-400 font-light leading-relaxed max-w-xl animate-fade-in-up-delay">
-              不動産の企画・開発・再生を通じて、まちと建築に新たな価値を創造する。
-              その一つひとつのプロジェクトが持つストーリーを、ここに。
+              ホテル開発、都市再生、収益不動産の再構築——
+              <br className="hidden lg:block" />
+              一つひとつのプロジェクトには、課題があり、戦略があり、
+              <br className="hidden lg:block" />
+              実行と成果の物語がある。
             </p>
             <div className="mt-12 flex items-center gap-8 animate-fade-in-up-delay-2">
               <Link
                 href="/projects"
-                className="inline-block text-sm tracking-wide border border-brand-red bg-brand-red px-8 py-3.5 text-white hover:bg-transparent hover:text-white transition-all duration-300"
+                className="inline-block text-sm tracking-wide bg-brand-red border border-brand-red px-8 py-3.5 text-white hover:bg-transparent transition-all duration-300"
               >
-                Project Stories
+                ストーリーを読む
               </Link>
-              <Link
-                href="/about"
-                className="text-sm tracking-wide text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                About Us &rarr;
-              </Link>
-            </div>
-          </div>
-
-          {/* Hero Metrics */}
-          <div className="mt-24 lg:mt-32 grid grid-cols-3 gap-8 max-w-lg">
-            <div>
-              <p className="text-3xl lg:text-4xl font-light">{totalProjects}+</p>
-              <p className="text-xs text-gray-500 mt-1 tracking-wide">
-                Projects
-              </p>
-            </div>
-            <div>
-              <p className="text-3xl lg:text-4xl font-light">4</p>
-              <p className="text-xs text-gray-500 mt-1 tracking-wide">
-                Business Areas
-              </p>
-            </div>
-            <div>
-              <p className="text-3xl lg:text-4xl font-light">20+</p>
-              <p className="text-xs text-gray-500 mt-1 tracking-wide">
-                Years
-              </p>
             </div>
           </div>
         </div>
@@ -74,34 +52,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Intro / Concept Section */}
+      {/* Concept */}
       <section className="py-24 lg:py-32 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
-                Our Philosophy
+              <p className="text-[11px] tracking-[0.2em] uppercase text-brand-red mb-4">
+                What We Tell
               </p>
               <h2 className="text-2xl lg:text-4xl font-light leading-relaxed tracking-tight">
-                不動産を、
+                実績ではなく、
                 <br />
-                売るのではなく、
-                <br />
-                価値を創る。
+                ストーリーを。
               </h2>
             </div>
             <div className="lg:col-span-7 flex items-center">
               <div>
                 <p className="text-sm lg:text-base text-gray-600 leading-[2.2]">
-                  dhp都市開発は、不動産を「モノ」としてではなく「コト」として捉えます。
-                  一つひとつの物件が持つ背景、そのエリアの文脈、そこに関わる人々の想い。
-                  それらを丁寧に読み解き、企画・開発・再生のプロセスを通じて、
-                  新たな価値として社会に還元していく。
+                  dhp都市開発が手がけるプロジェクトは、一つとして同じものがありません。
+                  土地の文脈、エリアの課題、関わる人々の想い——
+                  それらを読み解き、企画し、実行してきたプロセスそのものに、
+                  私たちの価値があると考えています。
                 </p>
                 <p className="mt-6 text-sm lg:text-base text-gray-600 leading-[2.2]">
-                  私たちの実績は、数字だけでは語れません。
-                  だからこそ、Project Storyとして、
-                  その一つひとつのプロセスをお伝えしています。
+                  このサイトでは、それぞれのプロジェクトが持つ
+                  背景・課題・戦略・実行・成果を「ストーリー」として公開しています。
+                  数字だけでは伝わらない、価値創造のリアルを、ぜひご覧ください。
                 </p>
                 <div className="mt-8 h-px w-16 bg-brand-red" />
               </div>
@@ -113,11 +89,13 @@ export default function HomePage() {
       {/* Featured Project Stories */}
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-light-gray">
         <div className="max-w-7xl mx-auto">
-          <SectionHeader
-            label="Featured Stories"
-            title="注目のプロジェクトストーリー"
-            description="企画背景から成果まで、価値創造のプロセスを物語として。"
-          />
+          <p className="text-[11px] tracking-[0.2em] uppercase text-brand-red mb-3">
+            Featured
+          </p>
+          <h2 className="text-2xl lg:text-3xl font-light tracking-tight mb-12 lg:mb-16">
+            注目のストーリー
+          </h2>
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
             {featuredProjects.map((project) => (
               <ProjectStoryCard
@@ -127,101 +105,95 @@ export default function HomePage() {
               />
             ))}
           </div>
-          <div className="mt-12 lg:mt-16 text-center">
-            <Link
-              href="/projects"
-              className="inline-block text-sm tracking-wide border border-brand-red text-brand-red px-8 py-3.5 hover:bg-brand-red hover:text-white transition-all duration-300"
-            >
-              すべてのストーリーを見る
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Business Overview */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <SectionHeader
-            label="Business"
-            title="事業領域"
-            description="不動産の価値創造に関わるあらゆる領域で、専門性の高いサービスを提供しています。"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200">
-            {[
-              {
-                title: "ホテル＆リゾートプロデュース開発事業",
-                desc: "土地と文化を読み解き、唯一無二の滞在体験を創る",
-              },
-              {
-                title: "不動産開発・流動化事業",
-                desc: "不動産の潜在価値を見出し、流動性を生み出す",
-              },
-              {
-                title: "アセットマネジメント / PM業務",
-                desc: "投資のライフサイクル全体に寄り添う",
-              },
-              {
-                title: "不動産コンサルティング / アレンジング",
-                desc: "複雑な案件を、最適な形に導く",
-              },
-            ].map((biz) => (
+      {/* More Stories */}
+      {otherProjects.length > 0 && (
+        <section className="py-24 lg:py-32 px-6 lg:px-12">
+          <div className="max-w-7xl mx-auto">
+            <p className="text-[11px] tracking-[0.2em] uppercase text-brand-red mb-3">
+              More Stories
+            </p>
+            <h2 className="text-2xl lg:text-3xl font-light tracking-tight mb-12 lg:mb-16">
+              その他のストーリー
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+              {otherProjects.map((project) => (
+                <ProjectStoryCard key={project.slug} project={project} />
+              ))}
+            </div>
+
+            <div className="mt-12 lg:mt-16 text-center">
               <Link
-                key={biz.title}
-                href="/business"
-                className="group bg-white p-8 lg:p-12 hover:bg-light-gray transition-colors duration-300"
+                href="/projects"
+                className="inline-block text-sm tracking-wide border border-brand-red text-brand-red px-8 py-3.5 hover:bg-brand-red hover:text-white transition-all duration-300"
               >
-                <h3 className="text-base lg:text-lg font-light tracking-tight group-hover:text-brand-red transition-colors duration-300">
-                  {biz.title}
-                </h3>
-                <p className="mt-2 text-sm text-gray-400">{biz.desc}</p>
-                <span className="mt-6 inline-block text-xs text-gray-300 group-hover:text-brand-red transition-colors duration-300">
-                  &rarr;
-                </span>
+                すべてのストーリーを見る
               </Link>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* Group Section */}
+      {/* Categories */}
       <section className="py-24 lg:py-32 px-6 lg:px-12 bg-light-gray">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-5">
-              <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
-                Group
-              </p>
-              <h2 className="text-2xl lg:text-3xl font-light tracking-tight">
-                グループ企業
-              </h2>
-              <p className="mt-4 text-sm text-gray-500 leading-relaxed">
-                dhp都市開発グループは、開発・運営・管理を一体とした
-                バリューチェーンを構築しています。
-              </p>
-              <Link
-                href="/group"
-                className="inline-block mt-8 text-sm tracking-wide text-brand-red hover:text-[#6b1a26] transition-colors duration-300"
-              >
-                グループ詳細 &rarr;
-              </Link>
-            </div>
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 gap-4">
-                {["100DOORS & RESORTS", "dhpアセットマネジメント", "dhpプロパティマネジメント"].map(
-                  (name) => (
-                    <div
-                      key={name}
-                      className="bg-white p-6 lg:p-8 border border-gray-100"
-                    >
-                      <h3 className="text-base font-light tracking-tight">
-                        {name}
-                      </h3>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
+          <p className="text-[11px] tracking-[0.2em] uppercase text-brand-red mb-3">
+            Categories
+          </p>
+          <h2 className="text-2xl lg:text-3xl font-light tracking-tight mb-12 lg:mb-16">
+            カテゴリから探す
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-gray-200">
+            {categories.map((cat) => {
+              const count = allProjects.filter((p) => p.category === cat).length;
+              return (
+                <Link
+                  key={cat}
+                  href={`/projects?category=${encodeURIComponent(cat)}`}
+                  className="group bg-white p-6 lg:p-8 hover:bg-white/80 transition-colors duration-300"
+                >
+                  <p className="text-sm lg:text-base font-light tracking-tight group-hover:text-brand-red transition-colors duration-300">
+                    {cat}
+                  </p>
+                  <p className="mt-1 text-xs text-gray-400">
+                    {count} {count === 1 ? "story" : "stories"}
+                  </p>
+                </Link>
+              );
+            })}
           </div>
+        </div>
+      </section>
+
+      {/* About dhp — light section */}
+      <section className="py-24 lg:py-32 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-[11px] tracking-[0.2em] uppercase text-brand-red mb-4">
+            About
+          </p>
+          <h2 className="text-2xl lg:text-3xl font-light tracking-tight mb-6">
+            dhp都市開発について
+          </h2>
+          <p className="text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto mb-8">
+            「ホテル＆リゾートプロデュース開発事業」「不動産開発・流動化事業」
+            「アセットマネジメント／プロジェクトマネジメント業務」
+            「不動産コンサルティング／プロジェクトアレンジング業務」の
+            4つの事業を通じて、不動産の価値創造に取り組んでいます。
+          </p>
+          <a
+            href={CORPORATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm tracking-wide text-brand-red hover:text-[#6b1a26] transition-colors duration-300"
+          >
+            コーポレートサイトを見る
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>
+          </a>
         </div>
       </section>
 

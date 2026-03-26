@@ -1,15 +1,6 @@
 import Link from "next/link";
 
-const footerNavigation = {
-  main: [
-    { name: "Top", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Business", href: "/business" },
-    { name: "Project Stories", href: "/projects" },
-    { name: "Group", href: "/group" },
-    { name: "Contact", href: "/contact" },
-  ],
-};
+const CORPORATE_URL = "https://www.dhp-dev.jp";
 
 export default function Footer() {
   return (
@@ -17,56 +8,85 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Brand */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-5">
             <Link href="/" className="flex items-center gap-2">
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-brand-red text-white text-xs font-bold rounded-sm">
+              <span className="inline-flex items-center justify-center w-8 h-8 bg-brand-red text-white text-[10px] font-bold rounded-sm leading-none">
                 dhp
               </span>
-              <span className="text-sm font-semibold tracking-tight">
-                株式会社dhp都市開発
-              </span>
-            </Link>
-            <p className="mt-4 text-xs text-gray-500 leading-relaxed">
-              dhp Urban Development co.,ltd.
-            </p>
-            <p className="mt-2 text-xs text-gray-500 leading-relaxed">
-              〒541-0058
-              <br />
-              大阪市中央区南久宝寺町4丁目5番12号
-              <br />
-              アップウェル心斎橋 2F
-            </p>
-          </div>
-
-          {/* Navigation */}
-          <div className="lg:col-span-4">
-            <div className="grid grid-cols-2 gap-3">
-              {footerNavigation.main.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm text-gray-400 hover:text-white transition-colors duration-300"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact */}
-          <div className="lg:col-span-4">
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2 text-sm text-gray-400">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                </svg>
-                06-6253-8262
+              <div className="flex flex-col">
+                <span className="text-sm font-semibold tracking-tight leading-tight">
+                  Project Stories
+                </span>
+                <span className="text-[10px] text-gray-500 tracking-wide leading-tight">
+                  dhp Urban Development
+                </span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-400">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0l.229 2.523a1.125 1.125 0 01-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0021 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 00-1.913-.247M6.34 18H5.25A2.25 2.25 0 013 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 011.913-.247m10.5 0a48.536 48.536 0 00-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18.75 6.634a48.08 48.08 0 00-1.913-.247" />
-                </svg>
-                06-6253-8263
+            </Link>
+            <p className="mt-6 text-xs text-gray-500 leading-relaxed max-w-sm">
+              株式会社dhp都市開発が手がけるプロジェクトの企画背景・課題・戦略・実行・成果を、
+              ストーリーとしてお届けするブランドメディアです。
+            </p>
+          </div>
+
+          {/* Site Navigation */}
+          <div className="lg:col-span-3">
+            <h3 className="text-[10px] font-semibold tracking-widest uppercase text-gray-600 mb-4">
+              This Site
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/" className="text-sm text-gray-400 hover:text-white transition-colors duration-300">
+                  Top
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects" className="text-sm text-gray-400 hover:text-white transition-colors duration-300">
+                  Project Stories
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-sm text-gray-400 hover:text-white transition-colors duration-300">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Corporate Links */}
+          <div className="lg:col-span-4">
+            <h3 className="text-[10px] font-semibold tracking-widest uppercase text-gray-600 mb-4">
+              Corporate
+            </h3>
+            <ul className="space-y-3">
+              {[
+                { name: "会社概要", path: "" },
+                { name: "事業内容", path: "" },
+                { name: "業務実績", path: "" },
+                { name: "グループ企業", path: "" },
+              ].map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={CORPORATE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center gap-1.5"
+                  >
+                    {item.name}
+                    <svg className="w-2.5 h-2.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 pt-6 border-t border-white/5">
+              <p className="text-xs text-gray-600 leading-relaxed">
+                株式会社dhp都市開発
+              </p>
+              <div className="mt-2 flex flex-col gap-1">
+                <span className="text-xs text-gray-500">TEL 06-6253-8262</span>
+                <span className="text-xs text-gray-500">FAX 06-6253-8263</span>
               </div>
             </div>
           </div>

@@ -15,16 +15,16 @@ export default function ContactCTA({ variant = "dark" }: ContactCTAProps) {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
         <p
-          className={`text-xs tracking-[0.2em] uppercase mb-6 ${
-            isDark ? "text-gray-400" : "text-gray-500"
+          className={`text-[11px] tracking-[0.2em] uppercase mb-6 ${
+            isDark ? "text-brand-red" : "text-brand-red"
           }`}
         >
           Contact
         </p>
         <h2 className="text-2xl lg:text-4xl font-light leading-relaxed mb-6">
-          プロジェクトのご相談、
+          あなたのプロジェクトも、
           <br className="lg:hidden" />
-          お気軽にお問い合わせください
+          ストーリーに。
         </h2>
         <p
           className={`text-sm leading-relaxed max-w-xl mx-auto mb-10 ${
@@ -33,13 +33,13 @@ export default function ContactCTA({ variant = "dark" }: ContactCTAProps) {
         >
           不動産開発、投資、再生、コンサルティングなど、
           <br className="hidden lg:block" />
-          あらゆるフェーズでのご相談を承っています。
+          次のプロジェクトのご相談を承っています。
         </p>
         <Link
           href="/contact"
           className={`inline-block text-sm tracking-wide px-10 py-4 transition-all duration-300 ${
             isDark
-              ? "border border-white/30 text-white hover:bg-brand-red hover:border-brand-red"
+              ? "bg-brand-red border border-brand-red text-white hover:bg-transparent"
               : "border border-brand-red text-brand-red hover:bg-brand-red hover:text-white"
           }`}
         >
