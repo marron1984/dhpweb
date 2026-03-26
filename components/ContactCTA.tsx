@@ -1,0 +1,51 @@
+import Link from "next/link";
+
+interface ContactCTAProps {
+  variant?: "light" | "dark";
+}
+
+export default function ContactCTA({ variant = "dark" }: ContactCTAProps) {
+  const isDark = variant === "dark";
+
+  return (
+    <section
+      className={`py-24 lg:py-32 ${
+        isDark ? "bg-navy text-white" : "bg-gray-50 text-navy"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+        <p
+          className={`text-xs tracking-[0.2em] uppercase mb-6 ${
+            isDark ? "text-gray-400" : "text-gray-500"
+          }`}
+        >
+          Contact
+        </p>
+        <h2 className="text-2xl lg:text-4xl font-light leading-relaxed mb-6">
+          プロジェクトのご相談、
+          <br className="lg:hidden" />
+          お気軽にお問い合わせください
+        </h2>
+        <p
+          className={`text-sm leading-relaxed max-w-xl mx-auto mb-10 ${
+            isDark ? "text-gray-400" : "text-gray-500"
+          }`}
+        >
+          不動産開発、投資、再生、コンサルティングなど、
+          <br className="hidden lg:block" />
+          あらゆるフェーズでのご相談を承っています。
+        </p>
+        <Link
+          href="/contact"
+          className={`inline-block text-sm tracking-wide px-10 py-4 transition-all duration-300 ${
+            isDark
+              ? "border border-white/30 text-white hover:bg-white hover:text-navy"
+              : "border border-navy text-navy hover:bg-navy hover:text-white"
+          }`}
+        >
+          お問い合わせ
+        </Link>
+      </div>
+    </section>
+  );
+}
