@@ -39,8 +39,8 @@ export default function BusinessPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
                   {/* Left */}
                   <div className="lg:col-span-4">
-                    <span className="text-xs tracking-[0.2em] text-gray-300 block mb-2">
-                      {String(index + 1).padStart(2, "0")}
+                    <span className="text-xs tracking-[0.2em] text-brand-red block mb-2">
+                      Business {String(index + 1).padStart(2, "0")}
                     </span>
                     <h2 className="text-xl lg:text-2xl font-light tracking-tight">
                       {area.title}
@@ -65,7 +65,7 @@ export default function BusinessPage() {
                             key={cap}
                             className="text-sm text-gray-500 flex items-start gap-2"
                           >
-                            <span className="text-gray-300 mt-0.5">—</span>
+                            <span className="text-brand-red mt-1 text-[8px]">&#9632;</span>
                             {cap}
                           </li>
                         ))}
@@ -85,7 +85,7 @@ export default function BusinessPage() {
                                 <Link
                                   key={project.slug}
                                   href={`/projects/${project.slug}`}
-                                  className="text-sm text-gray-500 border border-gray-200 px-4 py-2 hover:border-navy hover:text-navy transition-all duration-300"
+                                  className="text-sm text-gray-500 border border-gray-200 px-4 py-2 hover:border-brand-red hover:text-brand-red transition-all duration-300"
                                 >
                                   {project.title}
                                 </Link>

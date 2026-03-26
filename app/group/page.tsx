@@ -21,8 +21,8 @@ export default function GroupPage() {
         <div className="max-w-7xl mx-auto">
           {/* Parent Company */}
           <div className="mb-16 lg:mb-20">
-            <div className="bg-navy text-white p-8 lg:p-12">
-              <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4">
+            <div className="bg-dark text-white p-8 lg:p-12">
+              <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
                 Core Company
               </p>
               <h2 className="text-xl lg:text-2xl font-light tracking-tight">
@@ -48,7 +48,7 @@ export default function GroupPage() {
                   {company.description}
                 </p>
                 {company.url && (
-                  <span className="inline-block mt-6 text-xs text-gray-400">
+                  <span className="inline-block mt-6 text-xs text-brand-red">
                     詳細 &rarr;
                   </span>
                 )}
@@ -56,13 +56,13 @@ export default function GroupPage() {
             ))}
           </div>
 
-          {/* Group Structure Diagram Placeholder */}
-          <div className="mt-16 lg:mt-24 bg-gray-50 p-8 lg:p-12 text-center">
-            <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4">
+          {/* Group Structure */}
+          <div className="mt-16 lg:mt-24 bg-light-gray p-8 lg:p-12 text-center">
+            <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
               Group Structure
             </p>
             <div className="py-16">
-              <div className="inline-block bg-navy text-white px-8 py-4 text-sm">
+              <div className="inline-block bg-dark text-white px-8 py-4 text-sm">
                 dhp都市開発
               </div>
               <div className="w-px h-8 bg-gray-300 mx-auto" />

@@ -8,7 +8,7 @@ export default function PageHeader({ title, subtitle, label }: PageHeaderProps) 
   return (
     <section className="pt-32 lg:pt-40 pb-16 lg:pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
       {label && (
-        <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4">
+        <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
           {label}
         </p>
       )}
@@ -18,7 +18,7 @@ export default function PageHeader({ title, subtitle, label }: PageHeaderProps) 
           {subtitle}
         </p>
       )}
-      <div className="mt-8 h-px w-16 bg-navy" />
+      <div className="mt-8 h-px w-16 bg-brand-red" />
     </section>
   );
 }

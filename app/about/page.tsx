@@ -24,7 +24,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4">
+              <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
                 Philosophy
               </p>
               <h2 className="text-2xl lg:text-3xl font-light tracking-tight leading-relaxed">
@@ -59,9 +59,9 @@ export default function AboutPage() {
       </section>
 
       {/* Approach */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-gray-50">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-light-gray">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4">
+          <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
             Our Approach
           </p>
           <h2 className="text-2xl lg:text-3xl font-light tracking-tight mb-12 lg:mb-16">
@@ -87,7 +87,7 @@ export default function AboutPage() {
               },
             ].map((item) => (
               <div key={item.num} className="bg-white p-8 lg:p-12">
-                <span className="text-xs tracking-[0.2em] text-gray-300">
+                <span className="text-xs tracking-[0.2em] text-brand-red">
                   {item.num}
                 </span>
                 <h3 className="mt-4 text-lg font-light tracking-tight">
@@ -105,7 +105,7 @@ export default function AboutPage() {
       {/* Company Info */}
       <section className="py-24 lg:py-32 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4">
+          <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
             Company
           </p>
           <h2 className="text-2xl lg:text-3xl font-light tracking-tight mb-12 lg:mb-16">
@@ -131,6 +131,10 @@ export default function AboutPage() {
                 <dd className="col-span-2 text-sm">{companyInfo.capital}</dd>
               </div>
               <div className="py-5 grid grid-cols-3 gap-4">
+                <dt className="text-sm text-gray-400">代表取締役</dt>
+                <dd className="col-span-2 text-sm">{companyInfo.ceo}</dd>
+              </div>
+              <div className="py-5 grid grid-cols-3 gap-4">
                 <dt className="text-sm text-gray-400">所在地</dt>
                 <dd className="col-span-2 text-sm">{companyInfo.address}</dd>
               </div>
@@ -140,7 +144,7 @@ export default function AboutPage() {
                   <ul className="space-y-1">
                     {companyInfo.business.map((b) => (
                       <li key={b} className="flex items-start gap-2">
-                        <span className="text-gray-300 mt-0.5">—</span>
+                        <span className="text-brand-red mt-1 text-[8px]">&#9632;</span>
                         {b}
                       </li>
                     ))}
@@ -153,7 +157,7 @@ export default function AboutPage() {
           <div className="mt-16">
             <Link
               href="/projects"
-              className="text-sm tracking-wide text-navy hover:text-gray-600 transition-colors duration-300"
+              className="text-sm tracking-wide text-brand-red hover:text-[#6b1a26] transition-colors duration-300"
             >
               プロジェクトストーリーを見る &rarr;
             </Link>

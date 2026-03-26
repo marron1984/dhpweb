@@ -41,10 +41,9 @@ export default async function ProjectDetailPage({ params }: Props) {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-end bg-navy text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy via-[#0d1a2e] to-[#1a2744]" />
-        {/* Placeholder for hero image overlay */}
-        <div className="absolute inset-0 bg-navy/60" />
+      <section className="relative min-h-[70vh] flex items-end bg-dark text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-dark via-[#333] to-[#1a1a1a]" />
+        <div className="absolute inset-0 bg-dark/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24 w-full">
           <Link
             href="/projects"
@@ -53,7 +52,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             &larr; Project Stories
           </Link>
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-[11px] tracking-wider text-gray-400 uppercase">
+            <span className="text-[11px] tracking-wider text-brand-red font-medium">
               {project.category}
             </span>
             <span className="text-[11px] text-gray-500">|</span>
@@ -103,7 +102,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 {project.relatedTags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs text-gray-500 bg-gray-100 px-2 py-0.5"
+                    className="text-xs text-brand-red bg-red-50 px-2 py-0.5"
                   >
                     {tag}
                   </span>
@@ -116,7 +115,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <div className="py-12 lg:py-16">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
               <div className="lg:col-span-4">
-                <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-2">
+                <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-2">
                   Overview
                 </p>
                 <h2 className="text-xl lg:text-2xl font-light tracking-tight">
@@ -159,9 +158,9 @@ export default async function ProjectDetailPage({ params }: Props) {
 
       {/* Related Projects */}
       {relatedProjects.length > 0 && (
-        <section className="py-24 lg:py-32 px-6 lg:px-12 bg-gray-50">
+        <section className="py-24 lg:py-32 px-6 lg:px-12 bg-light-gray">
           <div className="max-w-7xl mx-auto">
-            <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-3">
+            <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-3">
               Related Stories
             </p>
             <h2 className="text-2xl lg:text-3xl font-light tracking-tight mb-12">

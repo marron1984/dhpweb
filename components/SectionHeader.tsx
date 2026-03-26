@@ -16,7 +16,7 @@ export default function SectionHeader({
   return (
     <div className={`mb-12 lg:mb-16 ${isCenter ? "text-center" : ""}`}>
       {label && (
-        <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-3">
+        <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-3">
           {label}
         </p>
       )}

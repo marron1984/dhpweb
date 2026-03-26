@@ -15,7 +15,7 @@ export default function ProjectStoryCard({
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className={`group block ${isFeatured ? "" : ""}`}
+      className="group block"
     >
       <article>
         {/* Thumbnail */}
@@ -25,7 +25,7 @@ export default function ProjectStoryCard({
           }`}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10" />
-          <div className="absolute inset-0 bg-navy/5 group-hover:bg-navy/0 transition-all duration-700" />
+          <div className="absolute inset-0 bg-dark/5 group-hover:bg-dark/0 transition-all duration-700" />
           {/* Placeholder for image */}
           <div className="absolute inset-0 flex items-center justify-center text-gray-300">
             <svg
@@ -47,14 +47,14 @@ export default function ProjectStoryCard({
         {/* Content */}
         <div className="mt-5">
           <div className="flex items-center gap-3 mb-2">
-            <span className="text-[11px] tracking-wider text-gray-400 uppercase">
+            <span className="text-[11px] tracking-wider text-brand-red font-medium">
               {project.category}
             </span>
             <span className="text-[11px] text-gray-300">|</span>
             <span className="text-[11px] text-gray-400">{project.location}</span>
           </div>
           <h3
-            className={`font-light tracking-tight group-hover:text-gray-600 transition-colors duration-300 ${
+            className={`font-light tracking-tight group-hover:text-brand-red transition-colors duration-300 ${
               isFeatured ? "text-xl lg:text-2xl" : "text-lg"
             }`}
           >
@@ -69,10 +69,10 @@ export default function ProjectStoryCard({
             </p>
           )}
           <div className="mt-4 flex items-center gap-2">
-            <span className="text-xs tracking-wide text-gray-400 group-hover:text-navy transition-colors duration-300">
+            <span className="text-xs tracking-wide text-gray-400 group-hover:text-brand-red transition-colors duration-300">
               Read Story
             </span>
-            <span className="text-gray-300 group-hover:text-navy group-hover:translate-x-1 transition-all duration-300">
+            <span className="text-gray-300 group-hover:text-brand-red group-hover:translate-x-1 transition-all duration-300">
               &rarr;
             </span>
           </div>

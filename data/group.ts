@@ -21,11 +21,13 @@ export const groupCompanies: GroupCompany[] = [
 
 export const companyInfo = {
   name: "株式会社dhp都市開発",
-  nameEn: "DHP Urban Development Co., Ltd.",
+  nameEn: "dhp Urban Development co.,ltd.",
   established: "2005年4月",
   capital: "1億円",
-  ceo: "代表取締役",
-  address: "東京都港区",
+  ceo: "堺本 泰之",
+  address: "〒541-0058\n大阪市中央区南久宝寺町4丁目5番12号\nアップウェル心斎橋 2F",
+  tel: "06-6253-8262",
+  fax: "06-6253-8263",
   business: [
     "ホテル＆リゾートプロデュース開発事業",
     "不動産開発・流動化事業",

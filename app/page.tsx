@@ -11,8 +11,8 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-navy text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy via-[#0d1a2e] to-[#1a2744]" />
+      <section className="relative min-h-screen flex items-center bg-dark text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-dark via-[#333] to-[#1a1a1a]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-32">
           <div className="max-w-3xl">
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-8 animate-fade-in-up">
@@ -32,7 +32,7 @@ export default function HomePage() {
             <div className="mt-12 flex items-center gap-8 animate-fade-in-up-delay-2">
               <Link
                 href="/projects"
-                className="inline-block text-sm tracking-wide border border-white/30 px-8 py-3.5 hover:bg-white hover:text-navy transition-all duration-300"
+                className="inline-block text-sm tracking-wide border border-brand-red bg-brand-red px-8 py-3.5 text-white hover:bg-transparent hover:text-white transition-all duration-300"
               >
                 Project Stories
               </Link>
@@ -79,7 +79,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
-              <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4">
+              <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
                 Our Philosophy
               </p>
               <h2 className="text-2xl lg:text-4xl font-light leading-relaxed tracking-tight">
@@ -103,7 +103,7 @@ export default function HomePage() {
                   だからこそ、Project Storyとして、
                   その一つひとつのプロセスをお伝えしています。
                 </p>
-                <div className="mt-8 h-px w-16 bg-navy" />
+                <div className="mt-8 h-px w-16 bg-brand-red" />
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Project Stories */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-gray-50">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-light-gray">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
             label="Featured Stories"
@@ -130,7 +130,7 @@ export default function HomePage() {
           <div className="mt-12 lg:mt-16 text-center">
             <Link
               href="/projects"
-              className="inline-block text-sm tracking-wide border border-navy text-navy px-8 py-3.5 hover:bg-navy hover:text-white transition-all duration-300"
+              className="inline-block text-sm tracking-wide border border-brand-red text-brand-red px-8 py-3.5 hover:bg-brand-red hover:text-white transition-all duration-300"
             >
               すべてのストーリーを見る
             </Link>
@@ -168,13 +168,13 @@ export default function HomePage() {
               <Link
                 key={biz.title}
                 href="/business"
-                className="group bg-white p-8 lg:p-12 hover:bg-gray-50 transition-colors duration-300"
+                className="group bg-white p-8 lg:p-12 hover:bg-light-gray transition-colors duration-300"
               >
-                <h3 className="text-base lg:text-lg font-light tracking-tight group-hover:text-navy transition-colors duration-300">
+                <h3 className="text-base lg:text-lg font-light tracking-tight group-hover:text-brand-red transition-colors duration-300">
                   {biz.title}
                 </h3>
                 <p className="mt-2 text-sm text-gray-400">{biz.desc}</p>
-                <span className="mt-6 inline-block text-xs text-gray-300 group-hover:text-navy transition-colors duration-300">
+                <span className="mt-6 inline-block text-xs text-gray-300 group-hover:text-brand-red transition-colors duration-300">
                   &rarr;
                 </span>
               </Link>
@@ -184,11 +184,11 @@ export default function HomePage() {
       </section>
 
       {/* Group Section */}
-      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-gray-50">
+      <section className="py-24 lg:py-32 px-6 lg:px-12 bg-light-gray">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4">
+              <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
                 Group
               </p>
               <h2 className="text-2xl lg:text-3xl font-light tracking-tight">
@@ -200,7 +200,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/group"
-                className="inline-block mt-8 text-sm tracking-wide text-navy hover:text-gray-600 transition-colors duration-300"
+                className="inline-block mt-8 text-sm tracking-wide text-brand-red hover:text-[#6b1a26] transition-colors duration-300"
               >
                 グループ詳細 &rarr;
               </Link>

@@ -17,7 +17,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="py-24 text-center">
-        <p className="text-xs tracking-[0.2em] uppercase text-gray-400 mb-4">
+        <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
           Thank You
         </p>
         <h3 className="text-xl font-light tracking-tight mb-4">
@@ -44,13 +44,13 @@ export default function ContactForm() {
           htmlFor="category"
           className="block text-xs tracking-wide text-gray-400 uppercase mb-2"
         >
-          ご相談カテゴリ <span className="text-red-400">*</span>
+          ご相談カテゴリ <span className="text-brand-red">*</span>
         </label>
         <select
           id="category"
           name="category"
           required
-          className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-navy transition-colors appearance-none"
+          className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm text-gray-700 focus:outline-none focus:border-brand-red transition-colors appearance-none"
         >
           <option value="">選択してください</option>
           {categories.map((cat) => (
@@ -68,14 +68,14 @@ export default function ContactForm() {
             htmlFor="company"
             className="block text-xs tracking-wide text-gray-400 uppercase mb-2"
           >
-            会社名 <span className="text-red-400">*</span>
+            会社名 <span className="text-brand-red">*</span>
           </label>
           <input
             type="text"
             id="company"
             name="company"
             required
-            className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-navy transition-colors"
+            className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-brand-red transition-colors"
           />
         </div>
         <div>
@@ -83,14 +83,14 @@ export default function ContactForm() {
             htmlFor="name"
             className="block text-xs tracking-wide text-gray-400 uppercase mb-2"
           >
-            お名前 <span className="text-red-400">*</span>
+            お名前 <span className="text-brand-red">*</span>
           </label>
           <input
             type="text"
             id="name"
             name="name"
             required
-            className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-navy transition-colors"
+            className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-brand-red transition-colors"
           />
         </div>
       </div>
@@ -102,14 +102,14 @@ export default function ContactForm() {
             htmlFor="email"
             className="block text-xs tracking-wide text-gray-400 uppercase mb-2"
           >
-            メールアドレス <span className="text-red-400">*</span>
+            メールアドレス <span className="text-brand-red">*</span>
           </label>
           <input
             type="email"
             id="email"
             name="email"
             required
-            className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-navy transition-colors"
+            className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-brand-red transition-colors"
           />
         </div>
         <div>
@@ -123,7 +123,7 @@ export default function ContactForm() {
             type="tel"
             id="phone"
             name="phone"
-            className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-navy transition-colors"
+            className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-brand-red transition-colors"
           />
         </div>
       </div>
@@ -134,14 +134,14 @@ export default function ContactForm() {
           htmlFor="message"
           className="block text-xs tracking-wide text-gray-400 uppercase mb-2"
         >
-          お問い合わせ内容 <span className="text-red-400">*</span>
+          お問い合わせ内容 <span className="text-brand-red">*</span>
         </label>
         <textarea
           id="message"
           name="message"
           required
           rows={6}
-          className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-navy transition-colors resize-none"
+          className="w-full border border-gray-200 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-brand-red transition-colors resize-none"
         />
       </div>
 
@@ -149,7 +149,7 @@ export default function ContactForm() {
       <div>
         <button
           type="submit"
-          className="inline-block text-sm tracking-wide border border-navy text-navy px-10 py-4 hover:bg-navy hover:text-white transition-all duration-300"
+          className="inline-block text-sm tracking-wide border border-brand-red text-brand-red px-10 py-4 hover:bg-brand-red hover:text-white transition-all duration-300"
         >
           送信する
         </button>
