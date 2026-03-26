@@ -14,8 +14,8 @@ export default function HomePage() {
   return (
     <>
       {/* ─── Hero ─── */}
-      <section className="relative min-h-screen flex items-end lg:items-center overflow-hidden bg-warm-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-16 py-32 lg:py-0 w-full">
+      <section className="relative overflow-hidden bg-warm-white pt-28 lg:pt-36 pb-20 lg:pb-28">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-16 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             {/* Copy */}
             <div className="order-2 lg:order-1">
@@ -61,17 +61,10 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll cue */}
-        <div className="absolute bottom-10 left-6 lg:left-16 hidden lg:flex items-center gap-3">
-          <div className="w-px h-10 bg-gradient-to-b from-transparent to-muted/30" />
-          <span className="text-[10px] tracking-[0.2em] uppercase text-muted/40 rotate-90 origin-left translate-x-2">
-            Scroll
-          </span>
-        </div>
       </section>
 
       {/* ─── Concept ─── */}
-      <section className="py-32 lg:py-44 px-6 lg:px-16 relative">
+      <section className="py-20 lg:py-28 px-6 lg:px-16 relative">
         <div className="max-w-[1400px] mx-auto">
           {/* Large quote-style heading */}
           <div className="max-w-4xl">
@@ -82,7 +75,7 @@ export default function HomePage() {
               それが、私たちの選んだ方法です。
             </h2>
           </div>
-          <div className="mt-16 lg:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="mt-12 lg:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5 lg:col-start-8">
               <p className="text-[14px] text-muted leading-[2.2]">
                 dhp都市開発が手がけるプロジェクトは、一つとして同じものがありません。
@@ -101,9 +94,9 @@ export default function HomePage() {
       </section>
 
       {/* ─── Featured Stories ─── */}
-      <section className="py-32 lg:py-44 px-6 lg:px-16 bg-cream">
+      <section className="py-20 lg:py-28 px-6 lg:px-16 bg-cream">
         <div className="max-w-[1400px] mx-auto">
-          <div className="flex items-end justify-between mb-16 lg:mb-24">
+          <div className="flex items-end justify-between mb-12 lg:mb-16">
             <div>
               <span className="label-editorial text-brand-red">Featured</span>
               <h2 className="mt-4 font-serif text-2xl lg:text-[2.2rem] font-light tracking-[0.02em]">
@@ -144,10 +137,10 @@ export default function HomePage() {
 
       {/* ─── More Stories ─── */}
       {otherProjects.length > 0 && (
-        <section className="py-32 lg:py-44 px-6 lg:px-16">
+        <section className="py-20 lg:py-28 px-6 lg:px-16">
           <div className="max-w-[1400px] mx-auto">
             <span className="label-editorial text-brand-red">More</span>
-            <h2 className="mt-4 font-serif text-2xl lg:text-[2.2rem] font-light tracking-[0.02em] mb-16 lg:mb-24">
+            <h2 className="mt-4 font-serif text-2xl lg:text-[2.2rem] font-light tracking-[0.02em] mb-12 lg:mb-16">
               その他のストーリー
             </h2>
 
@@ -161,10 +154,10 @@ export default function HomePage() {
       )}
 
       {/* ─── Categories ─── */}
-      <section className="py-32 lg:py-44 px-6 lg:px-16 bg-cream">
+      <section className="py-20 lg:py-28 px-6 lg:px-16 bg-cream">
         <div className="max-w-[1400px] mx-auto">
           <span className="label-editorial text-brand-red">Categories</span>
-          <h2 className="mt-4 font-serif text-2xl lg:text-[2.2rem] font-light tracking-[0.02em] mb-16 lg:mb-24">
+          <h2 className="mt-4 font-serif text-2xl lg:text-[2.2rem] font-light tracking-[0.02em] mb-12 lg:mb-16">
             カテゴリから探す
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-0">
@@ -195,7 +188,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── About (minimal) ─── */}
-      <section className="py-32 lg:py-44 px-6 lg:px-16">
+      <section className="py-20 lg:py-28 px-6 lg:px-16">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-2xl mx-auto text-center">
             <span className="label-editorial text-muted/40">About</span>
