@@ -14,13 +14,13 @@ export default function FilterBar({
   onSelect,
 }: FilterBarProps) {
   return (
-    <div className="flex flex-wrap gap-2 lg:gap-3 mb-12 lg:mb-16">
+    <div className="flex flex-wrap gap-3 mb-16 lg:mb-24">
       <button
         onClick={() => onSelect(null)}
-        className={`px-4 py-2 text-xs tracking-wide border transition-all duration-300 ${
+        className={`px-5 py-2.5 text-[11px] tracking-[0.15em] uppercase transition-all duration-300 ${
           activeCategory === null
-            ? "bg-brand-red text-white border-brand-red"
-            : "bg-transparent text-gray-500 border-gray-200 hover:border-brand-red hover:text-brand-red"
+            ? "bg-foreground text-white"
+            : "bg-transparent text-muted/60 hover:text-foreground border border-border hover:border-foreground/20"
         }`}
       >
         All
@@ -29,10 +29,10 @@ export default function FilterBar({
         <button
           key={cat}
           onClick={() => onSelect(cat)}
-          className={`px-4 py-2 text-xs tracking-wide border transition-all duration-300 ${
+          className={`px-5 py-2.5 text-[11px] tracking-[0.15em] uppercase transition-all duration-300 ${
             activeCategory === cat
-              ? "bg-brand-red text-white border-brand-red"
-              : "bg-transparent text-gray-500 border-gray-200 hover:border-brand-red hover:text-brand-red"
+              ? "bg-foreground text-white"
+              : "bg-transparent text-muted/60 hover:text-foreground border border-border hover:border-foreground/20"
           }`}
         >
           {cat}

@@ -40,98 +40,76 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   return (
     <>
-      {/* Hero — Light, airy */}
-      <section className="relative pt-28 lg:pt-36 pb-16 lg:pb-24 bg-gradient-to-b from-light-gray/80 to-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      {/* ─── Hero ─── */}
+      <section className="pt-32 lg:pt-44 pb-16 lg:pb-24 px-6 lg:px-16">
+        <div className="max-w-[1400px] mx-auto">
+          {/* Breadcrumb */}
           <Link
             href="/projects"
-            className="inline-block text-xs tracking-wide text-gray-400 hover:text-brand-red transition-colors duration-300 mb-8"
+            className="group inline-flex items-center gap-3 text-[11px] tracking-[0.15em] uppercase text-muted/50 hover:text-brand-red transition-colors duration-300 mb-12"
           >
-            &larr; Project Stories
+            <span className="w-6 h-px bg-current group-hover:w-10 transition-all duration-300" />
+            Stories
           </Link>
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-[11px] tracking-wider text-brand-red font-medium">
+
+          {/* Meta line */}
+          <div className="flex items-center gap-3 mb-6">
+            <span className="label-editorial text-brand-red">
               {project.category}
             </span>
-            <span className="text-[11px] text-gray-300">|</span>
-            <span className="text-[11px] text-gray-500">
-              {project.location}
-            </span>
-            <span className="text-[11px] text-gray-300">|</span>
-            <span className="text-[11px] text-gray-500">{project.year}</span>
+            <span className="w-4 h-px bg-border" />
+            <span className="text-[11px] text-muted/50">{project.location}</span>
+            <span className="w-4 h-px bg-border" />
+            <span className="text-[11px] text-muted/50 tabular-nums">{project.year}</span>
           </div>
-          <h1 className="text-3xl lg:text-5xl xl:text-6xl font-light tracking-tight leading-tight text-foreground">
+
+          {/* Title */}
+          <h1 className="font-serif text-[clamp(2rem,5vw,4rem)] font-light tracking-[0.02em] leading-[1.25] max-w-4xl">
             {project.title}
           </h1>
-          <p className="mt-4 text-base lg:text-lg text-gray-500 font-light max-w-2xl">
+          <p className="mt-6 text-[15px] text-muted/70 font-light max-w-2xl leading-[1.8]">
             {project.subtitle}
           </p>
-          <div className="mt-8 h-px w-20 bg-brand-red" />
 
-          {/* Hero Image Placeholder */}
-          <div className="mt-12 aspect-[21/9] bg-light-gray relative overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center text-gray-200">
-              <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={0.3} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-              </svg>
-            </div>
+          {/* Hero Image */}
+          <div className="mt-16 aspect-[21/9] bg-cream relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-cream to-[#ece9e5]" />
           </div>
         </div>
       </section>
 
-      {/* Project Overview */}
-      <section className="py-16 lg:py-24 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          {/* Meta Info */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-12 border-b border-gray-200">
-            <div>
-              <p className="text-xs tracking-wide text-gray-400 uppercase mb-1">
-                所在地
-              </p>
-              <p className="text-sm">{project.location}</p>
-            </div>
-            <div>
-              <p className="text-xs tracking-wide text-gray-400 uppercase mb-1">
-                カテゴリ
-              </p>
-              <p className="text-sm">{project.category}</p>
-            </div>
-            <div>
-              <p className="text-xs tracking-wide text-gray-400 uppercase mb-1">
-                年度
-              </p>
-              <p className="text-sm">{project.year}</p>
-            </div>
-            <div>
-              <p className="text-xs tracking-wide text-gray-400 uppercase mb-1">
-                タグ
-              </p>
-              <div className="flex flex-wrap gap-1">
-                {project.relatedTags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs text-brand-red bg-red-50 px-2 py-0.5"
-                  >
-                    {tag}
-                  </span>
-                ))}
+      {/* ─── Content ─── */}
+      <section className="px-6 lg:px-16">
+        <div className="max-w-[1400px] mx-auto">
+          {/* Project Meta */}
+          <div className="py-10 border-t border-b border-border grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { label: "Location", value: project.location },
+              { label: "Category", value: project.category },
+              { label: "Year", value: String(project.year) },
+              {
+                label: "Tags",
+                value: project.relatedTags.join(", "),
+              },
+            ].map((item) => (
+              <div key={item.label}>
+                <p className="label-editorial text-muted/40 mb-2">{item.label}</p>
+                <p className="text-[14px] text-foreground/80">{item.value}</p>
               </div>
-            </div>
+            ))}
           </div>
 
-          {/* Summary */}
-          <div className="py-12 lg:py-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+          {/* Overview */}
+          <div className="py-20 lg:py-28">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20">
               <div className="lg:col-span-4">
-                <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-2">
-                  Overview
-                </p>
-                <h2 className="text-xl lg:text-2xl font-light tracking-tight">
+                <span className="label-editorial text-brand-red">Overview</span>
+                <h2 className="mt-3 font-serif text-xl lg:text-2xl font-light tracking-[0.02em]">
                   プロジェクト概要
                 </h2>
               </div>
               <div className="lg:col-span-8">
-                <p className="text-sm lg:text-base text-gray-600 leading-[2.2]">
+                <p className="text-[14px] lg:text-[15px] text-muted leading-[2.2]">
                   {project.summary}
                 </p>
               </div>
@@ -164,26 +142,23 @@ export default async function ProjectDetailPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Related Projects */}
+      {/* ─── Related ─── */}
       {relatedProjects.length > 0 && (
-        <section className="py-24 lg:py-32 px-6 lg:px-12 bg-light-gray">
-          <div className="max-w-7xl mx-auto">
-            <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-3">
-              Related Stories
-            </p>
-            <h2 className="text-2xl lg:text-3xl font-light tracking-tight mb-12">
+        <section className="py-32 lg:py-44 px-6 lg:px-16 bg-cream mt-20">
+          <div className="max-w-[1400px] mx-auto">
+            <span className="label-editorial text-brand-red">Related</span>
+            <h2 className="mt-4 font-serif text-2xl lg:text-[2.2rem] font-light tracking-[0.02em] mb-16 lg:mb-24">
               関連するストーリー
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-              {relatedProjects.map((rp) => (
-                <ProjectStoryCard key={rp.slug} project={rp} />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {relatedProjects.map((rp, i) => (
+                <ProjectStoryCard key={rp.slug} project={rp} index={i} />
               ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* Contact CTA */}
       <ContactCTA />
     </>
   );

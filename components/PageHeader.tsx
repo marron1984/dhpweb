@@ -6,19 +6,18 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle, label }: PageHeaderProps) {
   return (
-    <section className="pt-32 lg:pt-40 pb-16 lg:pb-20 px-6 lg:px-12 max-w-7xl mx-auto">
+    <section className="pt-32 lg:pt-44 pb-20 lg:pb-28 px-6 lg:px-16 max-w-[1400px] mx-auto">
       {label && (
-        <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-4">
-          {label}
-        </p>
+        <p className="label-editorial text-brand-red mb-6">{label}</p>
       )}
-      <h1 className="text-3xl lg:text-5xl font-light tracking-tight">{title}</h1>
+      <h1 className="font-serif text-[clamp(2rem,4vw,3.5rem)] font-light tracking-[0.02em] leading-[1.3]">
+        {title}
+      </h1>
       {subtitle && (
-        <p className="mt-4 text-base lg:text-lg text-gray-500 font-light max-w-2xl leading-relaxed">
+        <p className="mt-6 text-[14px] text-muted leading-[2.2] max-w-xl">
           {subtitle}
         </p>
       )}
-      <div className="mt-8 h-px w-16 bg-brand-red" />
     </section>
   );
 }

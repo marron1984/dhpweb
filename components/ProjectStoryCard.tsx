@@ -4,11 +4,13 @@ import { ProjectStory } from "@/lib/types";
 interface ProjectStoryCardProps {
   project: ProjectStory;
   variant?: "default" | "featured";
+  index?: number;
 }
 
 export default function ProjectStoryCard({
   project,
   variant = "default",
+  index = 0,
 }: ProjectStoryCardProps) {
   const isFeatured = variant === "featured";
 
@@ -18,62 +20,55 @@ export default function ProjectStoryCard({
       className="group block"
     >
       <article>
-        {/* Thumbnail */}
+        {/* Image */}
         <div
-          className={`relative overflow-hidden bg-gray-100 ${
-            isFeatured ? "aspect-[16/10]" : "aspect-[3/2]"
+          className={`relative overflow-hidden bg-cream ${
+            isFeatured ? "aspect-[4/5]" : "aspect-[3/4]"
           }`}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10" />
-          <div className="absolute inset-0 bg-dark/5 group-hover:bg-dark/0 transition-all duration-700" />
-          {/* Placeholder for image */}
-          <div className="absolute inset-0 flex items-center justify-center text-gray-300">
-            <svg
-              className={`${isFeatured ? "w-16 h-16" : "w-12 h-12"}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={0.5}
-                d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
-              />
-            </svg>
+          <div className="img-zoom absolute inset-0 bg-gradient-to-b from-cream to-[#ece9e5]" />
+          {/* Overlay on hover */}
+          <div className="absolute inset-0 bg-brand-red/0 group-hover:bg-brand-red/5 transition-colors duration-700" />
+          {/* Index number */}
+          <div className="absolute top-5 left-5">
+            <span className="text-[11px] text-muted/30 tabular-nums">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+          </div>
+          {/* Category badge */}
+          <div className="absolute bottom-5 left-5">
+            <span className="text-[10px] tracking-[0.2em] uppercase text-foreground/60 bg-white/80 backdrop-blur-sm px-3 py-1.5">
+              {project.category}
+            </span>
           </div>
         </div>
 
         {/* Content */}
-        <div className="mt-5">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-[11px] tracking-wider text-brand-red font-medium">
-              {project.category}
-            </span>
-            <span className="text-[11px] text-gray-300">|</span>
-            <span className="text-[11px] text-gray-400">{project.location}</span>
+        <div className="mt-6">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-[11px] text-muted/60">{project.location}</span>
+            <span className="w-3 h-px bg-border" />
+            <span className="text-[11px] text-muted/60 tabular-nums">{project.year}</span>
           </div>
           <h3
-            className={`font-light tracking-tight group-hover:text-brand-red transition-colors duration-300 ${
-              isFeatured ? "text-xl lg:text-2xl" : "text-lg"
+            className={`font-serif font-light tracking-[0.02em] group-hover:text-brand-red transition-colors duration-500 ${
+              isFeatured ? "text-[1.25rem] lg:text-[1.4rem] leading-[1.4]" : "text-[1.1rem] lg:text-[1.2rem] leading-[1.4]"
             }`}
           >
             {project.title}
           </h3>
-          <p className="mt-2 text-sm text-gray-500 font-light">
+          <p className="mt-2 text-[13px] text-muted/70 leading-relaxed">
             {project.subtitle}
           </p>
           {isFeatured && (
-            <p className="mt-3 text-sm text-gray-400 leading-relaxed line-clamp-2">
+            <p className="mt-3 text-[13px] text-muted/50 leading-[1.9] line-clamp-2">
               {project.summary}
             </p>
           )}
-          <div className="mt-4 flex items-center gap-2">
-            <span className="text-xs tracking-wide text-gray-400 group-hover:text-brand-red transition-colors duration-300">
-              Read Story
-            </span>
-            <span className="text-gray-300 group-hover:text-brand-red group-hover:translate-x-1 transition-all duration-300">
-              &rarr;
+          <div className="mt-5 flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <span className="w-6 h-px bg-brand-red" />
+            <span className="text-[11px] tracking-[0.15em] uppercase text-brand-red">
+              Read
             </span>
           </div>
         </div>

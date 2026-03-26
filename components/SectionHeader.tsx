@@ -14,18 +14,16 @@ export default function SectionHeader({
   const isCenter = align === "center";
 
   return (
-    <div className={`mb-12 lg:mb-16 ${isCenter ? "text-center" : ""}`}>
+    <div className={`mb-16 lg:mb-24 ${isCenter ? "text-center" : ""}`}>
       {label && (
-        <p className="text-xs tracking-[0.2em] uppercase text-brand-red mb-3">
-          {label}
-        </p>
+        <p className="label-editorial text-brand-red mb-4">{label}</p>
       )}
-      <h2 className="text-2xl lg:text-3xl font-light tracking-tight">
+      <h2 className="font-serif text-2xl lg:text-[2.2rem] font-light tracking-[0.02em]">
         {title}
       </h2>
       {description && (
         <p
-          className={`mt-4 text-sm text-gray-500 leading-relaxed max-w-2xl ${
+          className={`mt-4 text-[14px] text-muted leading-[2] max-w-xl ${
             isCenter ? "mx-auto" : ""
           }`}
         >

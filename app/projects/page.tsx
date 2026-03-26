@@ -27,23 +27,23 @@ export default function ProjectsPage() {
         subtitle="企画背景・課題・戦略・実行・成果。一つひとつのプロジェクトが持つ価値創造のプロセスを、物語としてお伝えします。"
       />
 
-      <section className="pb-24 lg:pb-32 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
+      <section className="pb-32 lg:pb-44 px-6 lg:px-16">
+        <div className="max-w-[1400px] mx-auto">
           <FilterBar
             categories={categories}
             activeCategory={activeCategory}
             onSelect={setActiveCategory}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {filteredProjects.map((project) => (
-              <ProjectStoryCard key={project.slug} project={project} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {filteredProjects.map((project, i) => (
+              <ProjectStoryCard key={project.slug} project={project} index={i} />
             ))}
           </div>
 
           {filteredProjects.length === 0 && (
-            <div className="py-24 text-center">
-              <p className="text-sm text-gray-400">
+            <div className="py-32 text-center">
+              <p className="text-[14px] text-muted/50">
                 該当するプロジェクトがありません。
               </p>
             </div>
