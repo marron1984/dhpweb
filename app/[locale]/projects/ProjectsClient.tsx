@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { getAllProjects, getAllCategories } from "@/lib/projects";
-import { ProjectCategory } from "@/lib/types";
+import { ProjectStory, ProjectCategory } from "@/lib/types";
 import ProjectStoryCard from "@/components/ProjectStoryCard";
 import PageHeader from "@/components/PageHeader";
 import FilterBar from "@/components/FilterBar";
@@ -12,11 +11,11 @@ import type { Locale, Dictionary } from "@/lib/i18n";
 interface Props {
   locale: Locale;
   dict: Dictionary;
+  allProjects: ProjectStory[];
+  categories: ProjectCategory[];
 }
 
-export default function ProjectsClient({ locale, dict }: Props) {
-  const allProjects = getAllProjects();
-  const categories = getAllCategories();
+export default function ProjectsClient({ locale, dict, allProjects, categories }: Props) {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory | null>(null);
 
   const filteredProjects = activeCategory

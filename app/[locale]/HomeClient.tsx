@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { getFeaturedProjects, getAllProjects, getAllCategories } from "@/lib/projects";
+import { ProjectStory, ProjectCategory } from "@/lib/types";
 import ProjectStoryCard from "@/components/ProjectStoryCard";
 import ContactCTA from "@/components/ContactCTA";
 import {
@@ -20,13 +20,13 @@ const CORPORATE_URL = "https://www.dhp-dev.jp";
 interface Props {
   locale: Locale;
   dict: Dictionary;
+  featuredProjects: ProjectStory[];
+  allProjects: ProjectStory[];
+  categories: ProjectCategory[];
 }
 
-export default function HomeClient({ locale, dict }: Props) {
-  const featuredProjects = getFeaturedProjects();
-  const allProjects = getAllProjects();
+export default function HomeClient({ locale, dict, featuredProjects, allProjects, categories }: Props) {
   const otherProjects = allProjects.filter((p) => !p.featured);
-  const categories = getAllCategories();
   const prefix = `/${locale}`;
 
   return (

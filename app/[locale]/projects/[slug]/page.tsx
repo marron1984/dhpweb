@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getAllProjects, getProjectBySlug, getRelatedProjects } from "@/lib/projects";
+import { getAllProjects, getProjectBySlug, getRelatedProjects, preloadLocaleData } from "@/lib/projects";
 import { getDictionary, isValidLocale, type Locale } from "@/lib/i18n";
 import DetailClient from "./DetailClient";
 
@@ -18,7 +18,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
-  const project = getProjectBySlug(slug);
+  if (!isValidLocale(locale)) return {};
+  await preloadLocaleData(locale as Locale);
+  const project = getProjectBySlug(slug, locale as Locale);
   if (!project) return {};
   return { title: project.title, description: project.summary };
 }
@@ -26,11 +28,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProjectDetailPage({ params }: Props) {
   const { locale, slug } = await params;
   if (!isValidLocale(locale)) notFound();
-  const project = getProjectBySlug(slug);
+
+  await preloadLocaleData(locale as Locale);
+  const project = getProjectBySlug(slug, locale as Locale);
   if (!project) notFound();
 
   const dict = await getDictionary(locale as Locale);
-  const relatedProjects = getRelatedProjects(project.slug, project.relatedTags);
+  const relatedProjects = getRelatedProjects(project.slug, project.relatedTags, 3, locale as Locale);
 
   return <DetailClient project={project} relatedProjects={relatedProjects} locale={locale as Locale} dict={dict} />;
 }
