@@ -4,10 +4,11 @@ import { locales, defaultLocale } from "@/lib/i18n/config";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip static files, api routes, _next
+  // Skip static files, api routes, admin, _next
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
+    pathname.startsWith("/admin") ||
     pathname.startsWith("/images") ||
     pathname.includes(".") // files like favicon.ico
   ) {
@@ -38,5 +39,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|api|images|.*\\..*).*)"],
+  matcher: ["/((?!_next|api|admin|images|.*\\..*).*)"],
 };
